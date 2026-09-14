@@ -24,6 +24,41 @@ const create = createRoot( root );
 // create.render( <App> </App> )
 // 3. 
 
+// render 는 1개만 가능. SPA 이기때문.
+
 // [day047]
-import MyMarkUp from "./example/day047_260911_react/MyMarkUp";
-create.render( <MyMarkUp> </MyMarkUp> );
+
+// [day047]
+// import MyMarkUp from "./example/day047_260911_react/MyMarkUp";
+// create.render( <MyMarkUp> </MyMarkUp> );
+
+// [Component1]
+// import Component1 from "./example/day047_260911_react/Component1";
+// create.render(<Component1></Component1>)
+
+// [Component2]
+// import Component2 from "./example/day047_260911_react/Component2";
+// create.render(<Component2></Component2>)
+
+// [Component3]
+// import Component3 from "./example/day047_260911_react/Component3";
+// create.render(<Component3></Component3>)
+
+// [Component4]
+// import Component4 from "./example/day047_260911_react/Component4";
+// create.render(<Component4></Component4>)
+
+// [Component5]
+// import Component5 from "./example/day047_260911_react/Component5";
+// create.render(<Component5></Component5>)
+
+// [Component6]
+// import Component6 from "./example/day047_260911_react/Component6";
+// create.render(<Component6/>)
+
+
+// [day048]
+
+// [Practice1]
+import Practice1 from "./example/day048_260912_react/react_practice1/Practice1";
+create.render(<Practice1></Practice1>)
