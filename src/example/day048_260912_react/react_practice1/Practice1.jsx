@@ -23,9 +23,18 @@ export default function Practice1( props ){
   ];
 
   return (<> 
-      { /*여기구현*/ }
 
-    
+      { /*여기구현*/ }
+      <Profile name={data[0].name} imageUrl={data[0].imageUrl} ></Profile>
+      <Profile name={data[1].name} imageUrl={data[1].imageUrl}/>
+
+      {/* JSX 주석 */}
+      {
+        data.map( (i) => {
+          return(<>
+            <Profile name={i.name} imageUrl={i.imageUrl}></Profile>
+        </>) } )
+      }
 
   </>)
 } // func end 
@@ -33,7 +42,8 @@ export default function Practice1( props ){
 function Profile( props ) { 
   return (<>
       { /*여기구현*/ }
-      <h3>{}</h3>
+      <h3>{props.name}</h3>
+      <img src={props.imageUrl} />
 
   </> );
 } // func end 
