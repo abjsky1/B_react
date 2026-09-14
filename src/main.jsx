@@ -60,5 +60,13 @@ const create = createRoot( root );
 // [day048]
 
 // [Practice1]
-import Practice1 from "./example/day048_260912_react/react_practice1/Practice1";
-create.render(<Practice1></Practice1>)
+// import Practice1 from "./example/day048_260912_react/react_practice1/Practice1";
+// create.render(<Practice1></Practice1>)
+
+// [chapter06]
+// import Component1 from "./example/day048_260912_react/react_chapter06/Component1";
+// create.render(<Component1></Component1>)
+
+// [chapter07]
+import Component2 from "./example/day048_260912_react/react_chapter07/Component2";
+create.render(<Component2></Component2>)
