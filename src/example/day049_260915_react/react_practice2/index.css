@@ -1,0 +1,53 @@
+/*
+*{border: red 1px solid;}
+*/
+
+#inputdiv{
+    margin: 20px 0 30px 0;
+}
+
+.inputbox{
+    width: 200px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#inputbutton{
+    width: 40px;
+    height: 33px;
+    margin-left: 55px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.ma{
+    margin-left: 10px;
+}
+
+#in{
+    display: flex;
+}
+
+.aa{
+    padding: 5px 0;
+}
+
+#delete{
+    border-width: 1px;
+    border-color: rgb(255, 0, 0);
+    border-radius: 4px;
+    color: red;
+    height: 28px;
+}
+
+#contact{
+    display: flex;
+    justify-content: space-between;
+}
+
+#total{
+    color: gray;
+    font-size: 11px;
+}

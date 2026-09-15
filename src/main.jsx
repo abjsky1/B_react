@@ -79,6 +79,9 @@ const create = createRoot( root );
 // import ProductManager from "./example/day048_260912_react/totalpractice1/ProductManager";
 // create.render(<ProductManager></ProductManager>)
 
+
+// [day049]
+
 // [chapter08]
 // import Component1 from "./example/day049_260915_react/chapter08/Component1";
 // create.render(<Component1></Component1>)
@@ -88,5 +91,11 @@ const create = createRoot( root );
 // create.render(<Component2></Component2>)
 
 // [chapter10]
-import Component3 from "./example/day049_260915_react/chapter10/Component3";
-create.render(<Component3></Component3>)
+// import Component3 from "./example/day049_260915_react/chapter10/Component3";
+// create.render(<Component3></Component3>)
+
+// [Practice1]
+import Component from "./example/day049_260915_react/react_practice2/Component";
+create.render(<Component></Component>)
+
+
