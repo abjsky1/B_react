@@ -95,7 +95,24 @@ const create = createRoot( root );
 // create.render(<Component3></Component3>)
 
 // [Practice1]
-import Component from "./example/day049_260915_react/react_practice2/Component";
-create.render(<Component></Component>)
+// import Component from "./example/day049_260915_react/react_practice2/Component";
+// create.render(<Component></Component>)
+
+
+// [day049]
+
+// [chapter11]
+
+// 1. 라우터 라이브러리 가져오기
+// import { BrowserRouter } from "react-router-dom"; 
+// import App from "./example/day050_260916_react/chapter11/App";
+// create.render(<BrowserRouter><App></App></BrowserRouter>)
+
+// [teamproject]
+import { BrowserRouter } from "react-router-dom"; 
+import App from "./example/day050_260916_react/teamproject/App";
+create.render(<BrowserRouter><App/></BrowserRouter>)
+
+
 
 
