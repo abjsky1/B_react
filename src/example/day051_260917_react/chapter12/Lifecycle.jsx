@@ -7,6 +7,7 @@ function MoveBox( props ){
     const [position , setPosition] = useState(props.initPosition);
 //  leftCount 상태/변수 에 1 대입
     const [leftCount, setLeftCount] = useState(1)
+
     const boxStyle = {
         backgroundColor : 'red' , position : 'relative' , textAlign : 'center' ,
         width : '100px' , height : '100px' , margin : '10px' , lineHeight : '100px' , left : `${position}px`
@@ -27,9 +28,11 @@ function MoveBox( props ){
         return ( ) => { console.log( 'useEffect 실행 ==> 4. 컴포넌트 언마운트' ) }
 //  } );                    // [1] 의존성 배열 생략       : 최초 1번 실행 , 업데이트
 //  } , [ ] );              // [2] 의존성 배열 공백       : 최초 1번 실행 
-  } , [ leftCount ] );    // [3] 의존성 배열 특정 변수   : 최초 1번 실행 , 특정 변수 업데이트
+    } , [ leftCount ] );    // [3] 의존성 배열 특정 변수   : 최초 1번 실행 , 특정 변수 업데이트
 
+    console.log('return실행 ==> 2. 렌더링(return문)');
 
+    
 //  LifeCycle ==> 1. 컴포넌트 실행 ( 함수 호출 )
 //  return실행 ==> 2. 렌더링(return문)
 //  useEffect 실행 ==> 3. 컴포넌트 마운트
@@ -58,7 +61,7 @@ function MoveBox( props ){
 
 
 
-    console.log('return실행 ==> 2. 렌더링(return문)');
+    
 
     return (<>
         <div>

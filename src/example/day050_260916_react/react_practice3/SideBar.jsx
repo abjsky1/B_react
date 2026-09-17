@@ -11,10 +11,10 @@ export default function SideBar( props ){
             <div>팀원 소개</div>
             {/* <NavLink to="이동할 경로">텍스트</NavLink> */}
             {/* 페이지 로드 (새로고침) 없다 */}
-            <div><NavLink to="/t1">구현승</NavLink></div>
-            <div><NavLink to="/t2">남서은</NavLink></div>
-            <div><NavLink to="/t3">안병준</NavLink></div>
-            <div><NavLink to="/t4">안훈석</NavLink></div>
+            <div><NavLink to="/t1">구현승 [카테고리 전체 조회]</NavLink></div>
+            <div><NavLink to="/t2">남서은 [제품 전체 조회]</NavLink></div>
+            <div><NavLink to="/t3">안병준 [제품 등록]</NavLink></div>
+            <div><NavLink to="/t4">안훈석 [카테고리 등록]</NavLink></div>
 
             {/* <Link to="/xyz"><div>잘못된 페이지</div></Link> */}
         </div>
