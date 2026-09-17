@@ -99,7 +99,7 @@ const create = createRoot( root );
 // create.render(<Component></Component>)
 
 
-// [day049]
+// [day050]
 
 // [chapter11]
 
@@ -109,10 +109,15 @@ const create = createRoot( root );
 // create.render(<BrowserRouter><App></App></BrowserRouter>)
 
 // [teamproject]
-import { BrowserRouter } from "react-router-dom"; 
-import App from "./example/day050_260916_react/teamproject/App";
+// import { BrowserRouter } from "react-router-dom"; 
+// import App from "./example/day050_260916_react/teamproject/App";
+// create.render(<BrowserRouter><App/></BrowserRouter>)
+
+
+// [day051]
+
+// [chapter12]
+import App from "./example/day051_260917_react/chapter12/App";
+import { BrowserRouter } from "react-router-dom";
 create.render(<BrowserRouter><App/></BrowserRouter>)
-
-
-
 

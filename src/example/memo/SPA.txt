@@ -1,0 +1,17 @@
+SPA(싱글페이지)
+
+훅HOOK : useState , useEffect
+
+컴포넌트 : 함수 , return 1번 , return 에 html 존재
+
+html 최신화하기 위해서는 함수를 재실행 (재렌더링)
+
+재렌더링 기준 : state 변경 , props 변경
+
+useEffect : 컴포넌트 생명주기
+
+    - 함수 실행될 때 == 마운트         useEffect( ( ) => { } , [ ] );           최초 한 번 실행
+    - 함수 재실행될 때 == 업데이트      useEffect( ( ) => { } );                 재렌더링될 때마다 실행
+    - 함수 사라질 때 == 언마운트        useEffect( ( ) => { } , [ state변수 ] );  특정 변수가 변경될 때마다 실행
+
+목적 : 비동기통신(외부API와 통신) axios 로 백엔드와 통신 결과 시간 격차 줄이기
