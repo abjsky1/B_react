@@ -9,26 +9,39 @@ export default function ArticleView( props ){
                 <tbody>
                     <tr>
                         <th>작성자</th>
-                        <td>성유겸</td>
+                        <td>{props.selectRow.writer}</td>
                     </tr>
                     <tr>
                         <th>제목</th>
-                        <td>오늘은 React 공부하는 날</td>
+                        <td>{props.selectRow.title}</td>
                     </tr>
                     <tr>
                         <th>날짜</th>
-                        <td>2023-01-03</td>
+                        <td>{props.selectRow.date}</td>
                     </tr>
                     <tr>
-                        <th>내용</th>
-                        <td>
-                            열심히 해봅시당
-                            <br/>
-                            열공 합시당
+                        <th>내용1</th>
+                        <td>{props.selectRow.contents}</td>
+                    </tr>
+                    <tr>
+                        <th>내용2</th>
+                        <td>{props.selectRow.contents.split(' ').map( (currVal, index) => {
+                            return (
+                                <span key={index}>
+                                    {currVal} <br />
+                                </span>
+                            )
+                        } )
+                        }</td>
+                    </tr>
+                    <tr>
+                        <th>내용3</th>
+                        <td style={{'whiteSpace' : 'pre-wrap'}}>
+                            {props.selectRow.contents}
                         </td>
                     </tr>
                 </tbody>
             </table>
         </article>
-    </>)
+    </>);
 }

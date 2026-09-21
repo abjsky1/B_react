@@ -1,7 +1,10 @@
 export default function NavList( props ){
     return (<>
         <nav>
-            <a href="/">글쓰기</a>
+            <a href="/" onClick={function (event) {
+                event.preventDefault();
+                props.onChangeMode();
+            }}>글쓰기</a>
         </nav>
     </>);
 }
