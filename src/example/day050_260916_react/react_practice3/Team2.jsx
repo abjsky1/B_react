@@ -1,68 +1,90 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function Team2( props ){
+export default function ProductList() {
+    const [items, setItems] = useState([]);
+    const [error, setError] = useState("");
 
-    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        async function getData() {
+            try {
+                const response = await fetch("http://localhost:8080/test1", {
+                    headers: { Accept: "application/xml" },
+                });
 
-    useEffect(function () {
-        axios.get(
-            "https://wellness-exclusion-surfing-advisory.trycloudflare.com/api/products"
-        )
-        .then(function (response) {
-            setProducts(response.data);
-        })
-        .catch(function (error) {
-            console.error(error);
-            alert("제품 조회에 실패했습니다.");
-        });
+                if (!response.ok) throw new Error("조회 실패");
+
+                const text = await response.text();
+                const xml = new DOMParser().parseFromString(text, "text/xml");
+
+                if (xml.querySelector("parsererror")) {
+                    throw new Error("XML 형식 오류");
+                }
+
+                const rows = Array.from(
+                    xml.querySelectorAll("items > item")
+                ).map((node) => ({
+                    date: node.querySelector("receipt_dt")?.textContent,
+                    name: node.querySelector("sample_nm")?.textContent,
+                    pesticide: node.querySelector("detn_pstc")?.textContent,
+                    density: node.querySelector("detn_dens")?.textContent,
+                    result: node.querySelector("rul")?.textContent,
+                }));
+
+                setItems(rows);
+            } catch (e) {
+                setError(e.message);
+            }
+        }
+
+        getData();
     }, []);
 
-    return (<>
+    return (
         <div>
-            <h2>남서은</h2>
-            <table border="1" >
+            <h1>남서은 [제품 전체 조회]</h1>
+
+            <table border="1">
                 <tbody>
-                <tr>
-                    <th>학과</th>
-                    <td>미디어소프트웨어학과</td>
-                </tr>
-                <tr>
-                    <th >자기소개</th>
-                    <td>성결대학교 재학중인 미디어소프트웨어학과 23학번 남서은입니다.</td>
-                </tr> 
-                <tr>
-                    <th >제품 목록</th>
-                    <td>
-                        <table border="1" >
-                            <thead>
-                                <tr>
-                                    <th>bno</th>
-                                    <th>카테고리</th>
-                                    <th>상품명</th>
-                                    <th>가격</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {products.map(function (product) {
-                                    return (
-                                        <tr key={product.bno}>
-                                            <td>{product.bno}</td>
-                                            <td>{product.categoryname}</td>
-                                            <td>{product.name}</td>
-                                            <td>
-                                                {Number(product.price)
-                                                    .toLocaleString("ko-KR")}원
-                                            </td>
+                    <tr>
+                        <th style={{ whiteSpace: "nowrap" }}>학과</th>
+                        <td>미디어소프트웨어학과</td>
+                    </tr>
+                    <tr>
+                        <th style={{ whiteSpace: "nowrap" }}>자기소개</th>
+                        <td>성결대학교 학생입니다.</td>
+                    </tr>
+                    <tr>
+                        <th style={{ whiteSpace: "nowrap" }}>기능 수정</th>
+                        <td>
+                            {error && <p>{error}</p>}
+
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>접수일</th>
+                                        <th>시료명</th>
+                                        <th>검출 농약</th>
+                                        <th>검출 농도</th>
+                                        <th>판정</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {items.map((item, index) => (
+                                        <tr key={index}>
+                                            <td>{item.date}</td>
+                                            <td>{item.name}</td>
+                                            <td>{item.pesticide}</td>
+                                            <td>{item.density}</td>
+                                            <td>{item.result}</td>
                                         </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
-                    </td>
-                </tr> 
+                                    ))}
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-    </>)
+    );
 }

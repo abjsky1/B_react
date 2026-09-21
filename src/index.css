@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -108,4 +108,37 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+} */
+
+
+*{
+  margin: 5px;
+}
+input,
+textarea {
+  width: 95%;
+}
+input[type=submit] {
+  width: 100px;
+}
+#boardTable {
+  border: 1px solid gray; 
+  border-collapse: collapse; 
+  width: 500px;
+}
+#boardTable tr {
+  text-align: center;
+}
+#boardTable th, 
+td{
+  border: 1px solid gray;
+}
+#boardTable td {
+  text-align: left;
+}
+#boardTable td.cen {
+  text-align: center;
+}
+#boardTable td.subject {
+  text-align: left;
 }

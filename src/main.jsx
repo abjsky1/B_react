@@ -109,9 +109,9 @@ const create = createRoot( root );
 // create.render(<BrowserRouter><App></App></BrowserRouter>)
 
 // [teamproject]
- import { BrowserRouter } from "react-router-dom"; 
- import App from "./example/day050_260916_react/react_practice3/App";
- create.render(<BrowserRouter><App/></BrowserRouter>)
+// import { BrowserRouter } from "react-router-dom"; 
+// import App from "./example/day050_260916_react/react_practice3/App";
+// create.render(<BrowserRouter><App/></BrowserRouter>)
 
 
 // [day051]
@@ -121,3 +121,10 @@ const create = createRoot( root );
 // import { BrowserRouter } from "react-router-dom";
 // create.render(<BrowserRouter><App/></BrowserRouter>)
 
+
+// [day053]
+
+// [chapter13]
+import App from "./example/day053_260921_react/chapter19/App";
+import { BrowserRouter } from "react-router-dom";
+create.render(<BrowserRouter><App></App></BrowserRouter>)
