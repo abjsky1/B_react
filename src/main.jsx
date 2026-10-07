@@ -141,9 +141,20 @@ const create = createRoot( root );
 // [day056]
 
 // [Spring connect]
-import App from "./example/day056_260928_react/App";
+// import App from "./example/day056_260928_react/App";
+// import { BrowserRouter } from "react-router-dom";
+// create.render(<BrowserRouter><App></App></BrowserRouter>)
+
+
+ 
+ 	
+// [day060]
+// import { BrowserRouter } from "react-router-dom";
+// import App from "./example/day060_261002_react/App";
+// create.render(<BrowserRouter><App/></BrowserRouter>)
+
+
+// [day062]
 import { BrowserRouter } from "react-router-dom";
-create.render(<BrowserRouter><App></App></BrowserRouter>)
-
-
-
+import ChatRoom from "./example/day062_261007_react/ChatRoom";
+create.render(<BrowserRouter><ChatRoom></ChatRoom></BrowserRouter>)
